@@ -18,7 +18,7 @@ function countDeadAnts(input) {
     
     return maxDeadAnts;
   }
-  
+  module.exports = countDeadAnts;
   // Example of usage
   const input = "...ant...ant..nat.ant.t..ant...ant..ant..ant.anant..t";
   const deadAnts = countDeadAnts(input);
