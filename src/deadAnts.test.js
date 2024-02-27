@@ -20,5 +20,4 @@ describe('countDeadAnts', () => {
     expect(result).toBe(0);
   });
 
-  // Add more test cases as needed
 });
