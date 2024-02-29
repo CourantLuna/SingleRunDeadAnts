@@ -15,7 +15,7 @@ function countDeadAnts(input) {
     
     // Finds the maximum number of occurrences among 'a', 'n', and 't'
     const maxDeadAnts = Math.max(count.a, count.n, count.t);
-    
+
     return maxDeadAnts;
   }
   module.exports = countDeadAnts;
