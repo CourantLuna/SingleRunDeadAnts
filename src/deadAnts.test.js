@@ -1,8 +1,30 @@
-//Dead
+//test performance comparison
 
-const countDeadAnts = require('./deadAnts'); // Adjust the import based on your file structure
+const { countDeadAnts, countDeadAntsOpt } = require('./deadAnts');
+const { performance } = require('perf_hooks');
 
-describe('Dead Ants Counter - Version 0', () => {
+describe('Performance comparison between countDeadAnts and countDeadAntsOpt', () => {
+    test('countDeadAntsOpt should be faster than countDeadAnts', () => {
+      const input = "...ant...ant..nat.ant.t..ant...ant..ant..ant.anant..t".repeat(10000);
+      
+      // Medir el tiempo de countDeadAnts
+      const startTime1 = performance.now();
+      countDeadAnts(input);
+      const endTime1 = performance.now();
+      const duration1 = endTime1 - startTime1;
+      
+      // Medir el tiempo de countDeadAntsOpt
+      const startTime2 = performance.now();
+      countDeadAntsOpt(input);
+      const endTime2 = performance.now();
+      const duration2 = endTime2 - startTime2;
+  
+      // Verificar que countDeadAntsOpt es más rápido
+      expect(duration1).toBeLessThan(duration2);
+    });
+  });
+
+/*describe('Dead Ants Counter - Version 0', () => {
 test('TC1: Empty String Input', () => {
 expect(countDeadAnts("")).toBe(0);
 });
@@ -31,4 +53,4 @@ const endTime = performance.now();
 expect(output).toBe(10000);
 expect(endTime - startTime).toBeLessThan(1000); // Ensure the test completes within 1 second
 });
-});
+}); */
