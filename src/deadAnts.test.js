@@ -20,7 +20,7 @@ describe('Performance comparison between countDeadAnts and countDeadAntsOpt', ()
       const duration2 = endTime2 - startTime2;
   
       // Verificar que countDeadAntsOpt es más rápido
-      expect(duration1).toBeLessThan(duration2);
+      expect(duration2).toBeLessThan(duration1);
     });
   });
 
